@@ -27,8 +27,16 @@ app.get("/api/hello", function (req, res) {
 // main endpoint
 app.get("/api/timestamp/:date_string?", function (req, res) {
   const dateString = req.params["date_string"]
-  const date = dateString == "" ? new Date() : new Date(dateString)
-  res.json({"unix": date.getTime(), "utc": date.toUTCString()});
+  const date = dateString == null ? new Date() : new Date(dateString)
+  if (isNaN(date.getTime())) {
+    date.setTime(dateString)
+    if (isNaN(date.getTime()))
+      res.json({"error" : "Invalid Date" })
+    else
+      res.json({"unix": date.getTime(), "utc": date.toUTCString()})
+  }
+  else
+    res.json({"unix": date.getTime(), "utc": date.toUTCString()})
 });
 
 
