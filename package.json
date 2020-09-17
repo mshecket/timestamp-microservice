@@ -1,7 +1,7 @@
 {
-	"name": "fcc-api-projects-boilerplate",
+	"name": "timestamp-microservice",
 	"version": "0.0.1",
-	"description": "An FCC Backend Challenge",
+	"description": "An FCC Backend Challenge as solved by Mike Shecket",
 	"main": "server.js",
 	"scripts": {
 		"start": "nodemon local.js",
