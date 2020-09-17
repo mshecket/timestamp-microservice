@@ -4,11 +4,14 @@
 	"description": "An FCC Backend Challenge",
 	"main": "server.js",
 	"scripts": {
-		"start": "node server.js"
+		"start": "nodemon local.js",
+		"deploy": "serverless deploy"
 	},
 	"dependencies": {
+		"aws-serverless-express": "^3.3.8",
+		"cors": "^2.8.0",
 		"express": "^4.12.4",
-		"cors": "^2.8.0"
+		"nodemon": "^2.0.4"
 	},
 	"engines": {
 		"node": "4.4.5"
@@ -23,5 +26,8 @@
 		"express",
 		"freecodecamp"
 	],
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {
+		"serverless": "^2.0.0"
+	}
 }
